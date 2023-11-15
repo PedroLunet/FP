@@ -1,0 +1,6 @@
+p_amount = int(input())
+int_rate = float(input())
+frequency = int(input())
+time = int(2)
+f_amount = p_amount * ((1 + (int_rate / frequency)) ** (frequency * time))
+print(round(f_amount, 3))

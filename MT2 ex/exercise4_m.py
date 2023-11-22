@@ -9,16 +9,15 @@ def add(num1, num2):
     result_integer = ""
     result_decimal = ""
     carry = 0
-
+    for i in range(max(len(s1[1]), len(s2[1]))):
+        digit_sum = int(s1[1][i] if i < len(s1[1]) else 0) + int(s2[1][i] if i < len(s2[1]) else 0) + carry
+        result_decimal += str(digit_sum % 10)
+        carry = digit_sum // 10
     for i in range(max(len(s1[0]), len(s2[0]))):
         digit_sum = int(s1[0][i] if i < len(s1[0]) else 0) + int(s2[0][i] if i < len(s2[0]) else 0) + carry
         result_integer += str(digit_sum % 10)
         carry = digit_sum // 10
 
-    for i in range(max(len(s1[1]), len(s2[1]))):
-        digit_sum = int(s1[1][i] if i < len(s1[1]) else 0) + int(s2[1][i] if i < len(s2[1]) else 0) + carry
-        result_decimal += str(digit_sum % 10)
-        carry = digit_sum // 10
 
     if carry:
         result_integer += str(carry)

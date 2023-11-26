@@ -6,3 +6,5 @@ def move_tower(height, from_pole, to_pole, with_pole, count):
         count += 1
         count = move_tower(height-1, with_pole, to_pole, from_pole, count)
     return count
+
+move_tower(4, "X", "Z", "Y", 1)

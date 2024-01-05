@@ -9,7 +9,6 @@ def merge(xs, ys):
             result.append(ys[j])
             j += 1
 
-    # Add the remaining elements from both lists, if any
     result.extend(xs[i:])
     result.extend(ys[j:])
 

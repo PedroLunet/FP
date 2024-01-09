@@ -1,10 +1,20 @@
 import math
 
 def comprehensions(i, j):
-    numbers_3_8 = [num for num in range(i, j+1) if str(num)[-1] in ['3', '8']]
-    
-    square_roots = tuple(round(math.sqrt(num), 2) for num in range(i, j+1))
-    
-    ascii_dict = {num: chr(num) for num in range(i, j+1)}
-    
-    return (numbers_3_8, square_roots, ascii_dict)
+    int3_8 = [x for x in range(i, j + 1) if str(x)[-1] in ["3", "8"]]
+    sqrtint3_8 = tuple(round(math.sqrt(x), 2) for x in range(i, j + 1))
+    asciidic = {k:chr(k) for k in range(i , j + 1)}
+    return (int3_8, sqrtint3_8, asciidic)
+
+
+print(comprehensions(0, 0))
+#([], (0.0,), {0: '\x00'})
+
+print(comprehensions(100, 102))
+#([], (10.0, 10.05, 10.1), {100: 'd', 101: 'e', 102: 'f'})
+
+print(comprehensions(110, 115))
+#([113], (10.49, 10.54, 10.58, 10.63, 10.68, 10.72), {110: 'n', 111: 'o', 112: 'p', 113: 'q', 114: 'r', 115: 's'})
+
+print(comprehensions(63, 69))
+#([63, 68], (7.94, 8.0, 8.06, 8.12, 8.19, 8.25, 8.31), {63: '?', 64: '@', 65: 'A', 66: 'B', 67: 'C', 68: 'D', 69: 'E'})

@@ -8,3 +8,5 @@ def shorten(suffixes, base):
                 number //= base
         return str(number)
     return transform_number
+
+print(shorten(["", "K", "M"], 1000)("12456789"))

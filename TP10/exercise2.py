@@ -1,11 +1,10 @@
 import math
 
 def comprehensions(i, j):
-    int3_8 = [x for x in range(i, j + 1) if str(x)[-1] in ["3", "8"]]
-    sqrtint3_8 = tuple(round(math.sqrt(x), 2) for x in range(i, j + 1))
-    asciidic = {k:chr(k) for k in range(i , j + 1)}
-    return (int3_8, sqrtint3_8, asciidic)
-
+    int3_8 = [x for x in range(i, j + 1) if str(x)[-1] == "3" or str(x)[-1] == "8"]
+    tup = tuple(round(math.sqrt(x), 2) for x in range(i, j + 1))
+    dicval = {x:chr(x) for x in range(i, j + 1)}
+    return (int3_8, tup, dicval)
 
 print(comprehensions(0, 0))
 #([], (0.0,), {0: '\x00'})
